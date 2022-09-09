@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'io.gitlab.arturbosch.detekt'
+}
+
+android {
+    compileSdk Version.compileSdk
+
+    defaultConfig {
+        applicationId "com.redy.imageapp"
+        minSdk Version.minSdk
+        targetSdk Version.targetSdk
+        versionCode Version.versionCode
+        versionName Version.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "String", "URL", '"https://picsum.photos"'
+        }
+
+        release {
+            buildConfigField "String", "URL", '"https://picsum.photos"'
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        freeCompilerArgs = ['-Xjvm-default=enable']
+        jvmTarget = Version.jvmTarget
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+}
+
+dependencies {
+    implementation Dependencies.androidXCore
+    implementation Dependencies.androidXActivity
+    implementation Dependencies.androidXAppcompat
+    implementation Dependencies.androidXConstraintLayout
+    implementation Dependencies.androidMaterial
+
+
+// Coroutines
+    implementation Dependencies.coroutineCore
+    implementation Dependencies.coroutineAndroid
+
+// Http Operator
+//implementation "com.squareup.okhttp3:logging-interceptor:4.10.0"
+    implementation Dependencies.squareOkhttp
+
+// Http Request
+    implementation Dependencies.squareConverterGson
+    implementation Dependencies.squareRetrofit
+
+// Image loader
+    implementation Dependencies.coil
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
+
+    testImplementation Dependencies.unitTestJUnit
+    androidTestImplementation Dependencies.unitTestAndroidJunit
+    androidTestImplementation Dependencies.unitTestEspresso
+    testImplementation Dependencies.unitTestRobolectric
+}
