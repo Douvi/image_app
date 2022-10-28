@@ -1,0 +1,14 @@
+on:
+  pull_request:
+    branches:
+     - /*
+
+jobs:
+  runscript:
+    name: Validate Detekt and Storyguide.md file
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if Rules are sync
+        run:  bash ${GITHUB_WORKSPACE}/config/script/validate_detekt_scrip.sh
+      - name: Check if Version is sync
+        run:  bash ${GITHUB_WORKSPACE}/config/script/validate_detekt_version_scrip.sh
