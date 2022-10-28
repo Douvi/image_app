@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Check if Rules are sync
-        run:  sh .github/workflows/script/validate_detekt_scrip.sh
+        run:  bash .github/workflows/script/validate_detekt_scrip.sh
       - name: Check if Version is sync
-        run:  sh .github/workflows/script/validate_detekt_version_scrip.sh
+        run:  bash .github/workflows/script/validate_detekt_version_scrip.sh
