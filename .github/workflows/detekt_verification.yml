@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check if Rules are sync
-        run:  sh .github/workflows/scripts/validate_detekt_scrip.sh
+        run:  sh .github/workflows/script/validate_detekt_scrip.sh
       - name: Check if Version is sync
-        run:  sh .github/workflows/scripts/validate_detekt_version_scrip.sh
+        run:  sh .github/workflows/script/validate_detekt_version_scrip.sh
