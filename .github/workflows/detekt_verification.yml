@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check if Rules are sync
-        run:  bash ${GITHUB_WORKSPACE}/config/script/validate_detekt_scrip.sh
+        run:  bash config/script/validate_detekt_scrip.sh
       - name: Check if Version is sync
-        run:  bash ${GITHUB_WORKSPACE}/config/script/validate_detekt_version_scrip.sh
+        run:  bash config/script/validate_detekt_version_scrip.sh
