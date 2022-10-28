@@ -4,7 +4,7 @@ This file will explain all the rules we will use to compile the project. As a ru
 
 | Name   | Version | Site                                           |
 |--------|---------|------------------------------------------------|
-| detekt | 1.21.0  | [Documentation](https://detekt.dev/docs/intro) |
+| detekt | 1.31.0  | [Documentation](https://detekt.dev/docs/intro) |
 
 ### Complexity Rule Set
 This rule set contains rules that report complex code.
