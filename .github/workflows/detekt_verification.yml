@@ -9,6 +9,7 @@ jobs:
     name: Validate Detekt and Storyguide.md file
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Check if Rules are sync
         run:  sh .github/workflows/script/validate_detekt_scrip.sh
       - name: Check if Version is sync
