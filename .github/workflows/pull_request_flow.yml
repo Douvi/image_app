@@ -1,0 +1,9 @@
+name: Pull Request Flow
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  call-workflow-1-in-local-repo:
+    uses: ./.github/workflows/detekt_verification.yml
